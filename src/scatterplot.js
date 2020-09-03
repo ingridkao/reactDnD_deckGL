@@ -14,6 +14,7 @@ import {
 } from './controls';
 
 import { tooltipStyle } from './style';
+import 'mapbox-gl/src/css/mapbox-gl.css';
 
 import { renderLayers } from './deckgl-layers';
 
@@ -58,6 +59,9 @@ export default class Scatterplot extends Component {
     selectedHour: null
   }
 
+  //bundle.js:33 Warning: componentWillReceiveProps has been renamed, and is not recommended for use. 
+  //Warnings from react-dom.development.js won't appear in production.
+  //https://stackoverflow.com/questions/58924617/componentwillreceiveprops-has-been-renamed
   componentDidMount() {
     //在component 被render 到DOM 之後才會執行
     this._processData();

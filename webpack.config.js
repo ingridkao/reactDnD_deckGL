@@ -15,6 +15,19 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
+      },
+      {
+        test: /\.css$/,
+        use : [
+          {
+              // Adds CSS to the DOM by injecting a `<style>` tag.
+              loader: "style-loader"
+          },
+          {
+              // Interprets `@import` and `url()` like `import/require()` and will resolve them.
+              loader: "css-loader"
+          }
+        ]
       }
     ]
   },
@@ -35,6 +48,7 @@ module.exports = {
       }
     })],
   devServer: {
+    //inline: false,
     contentBase: './dist',
     hot: true
   }
