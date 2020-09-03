@@ -2,10 +2,11 @@ const resolve = require('path').resolve;
 const webpack = require('webpack');
 
 module.exports = {
+  //entry point
   entry: './src/index.js',
+  //打包
   output: {
-    path: __dirname + '/dist',
-    publicPath: '/',
+    path: __dirname + './',
     filename: 'bundle.js'
   },
   module: {
